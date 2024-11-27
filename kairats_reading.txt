@@ -10,6 +10,3 @@ it's class called - aggregated class
 composition relationship - Student class and Name class, Name depends on Student
 aggregation relationship - Addres and Student. NO depends, can exist seperatly 
 
-
-
-
