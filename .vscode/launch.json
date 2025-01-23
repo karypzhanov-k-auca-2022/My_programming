@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "train_java",
+            "request": "launch",
+            "mainClass": "Problems.leetcode.train_java",
+            "projectName": "Java_project_f8036bf6"
+        },
+        {
+            "type": "java",
             "name": "problems",
             "request": "launch",
             "mainClass": "codewars.problems",
