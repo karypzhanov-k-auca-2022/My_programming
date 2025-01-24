@@ -1,0 +1,12 @@
+Aggregation and Composition
+
+owner object - aggregating object
+it's class called - aggregating class 
+
+subject object - aggregated object
+it's class called - aggregated class
+
+1 obj - 2 obj = composition if 1 depends on 2
+composition relationship - Student class and Name class, Name depends on Student
+aggregation relationship - Addres and Student. NO depends, can exist seperatly 
+
