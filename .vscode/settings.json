@@ -64,5 +64,6 @@
         "utility": "cpp",
         "text_encoding": "cpp",
         "thread": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

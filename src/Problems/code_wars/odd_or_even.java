@@ -1,4 +1,4 @@
-public class oddOrEven {
+public class odd_or_even {
     public static String oddOrEven (int[] array) {
       int sum = 0;
       for (int i = 0; i < array.length; i++) {
