@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "roman_to_int",
+            "request": "launch",
+            "mainClass": "Problems.leetcode.roman_to_int",
+            "projectName": "Java_project_f8036bf6"
+        },
+        {
+            "type": "java",
+            "name": "train_java",
+            "request": "launch",
+            "mainClass": "Problems.leetcode.train_java",
+            "projectName": "Java_project_f8036bf6"
+        },
+        {
+            "type": "java",
+            "name": "problems",
+            "request": "launch",
+            "mainClass": "codewars.problems",
+            "projectName": "Java_project_822b0d37"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "university.Main",
+            "projectName": "Java_project_822b0d37"
+        },
+        {
+            "type": "java",
+            "name": "menu",
+            "request": "launch",
+            "mainClass": "BMI.menu",
+            "projectName": "Java_project_822b0d37"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "bank.main",
+            "projectName": "Java_project_822b0d37"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Java_project_822b0d37"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
