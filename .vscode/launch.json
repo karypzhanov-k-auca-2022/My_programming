@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "train_java",
+            "request": "launch",
+            "mainClass": "train_java",
+            "projectName": "Programming_8735f4a2"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "shapes.Main",
