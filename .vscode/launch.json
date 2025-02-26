@@ -6,6 +6,20 @@
             "name": "train_java",
             "request": "launch",
             "mainClass": "train_java",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
+            "name": "menu",
+            "request": "launch",
+            "mainClass": "bank.menu",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
+            "name": "train_java",
+            "request": "launch",
+            "mainClass": "train_java",
             "projectName": "Programming_8735f4a2"
         },
         {
