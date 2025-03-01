@@ -1,7 +1,8 @@
+package practice;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class train_java {
+public class train_binary_search_java {
     public static int binarySearch(int[] array, int target) {
         int low = 0;
         int high = array.length - 1;
