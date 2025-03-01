@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "zoo.App",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
             "name": "train_java",
             "request": "launch",
             "mainClass": "train_java",
