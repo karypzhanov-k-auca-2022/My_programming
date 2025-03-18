@@ -10,7 +10,7 @@ it's class called - aggregated class
 composition relationship - Student class and Name class, Name depends on Student
 aggregation relationship - Addres and Student. NO depends, can exist seperatly
 
-Plan to study Java
+Plan to study part Java
 
 1. Java Fundamentals: Variables, Operators, Primitives
 2. Java Fundamentals: One-Multi-dimensional Arrays, Class Arrays
@@ -24,7 +24,17 @@ Plan to study Java
 10. Java IO: Read & write console, Scanner, Formatter, I\O Streams
 11. Java IO: Read & write file data, I\O Streams
 
+https://github.com/borymskyi/roadmap-java-sng?tab=readme-ov-file#java-core link
+
 18.03.2025
 1. Java SE - Standard Edition (for Standard Desktop Applications)
 2. Java EE - Enterprise Edition (for Enterprise Applications)
 3. Java ME - Micro Edition or Mobile Applications (for Mobile Applications)
+
+1. Compiler javac - translates source code into bytecode
+2. JVM - Java Virtual Machine - translates bytecode into machine code
+3. JRE - Java Runtime Environment - JVM + libraries
+4. JDK - Java Development Kit - JRE + tools for development
+5. IDE - Integrated Development Environment - Eclipse, IntelliJ IDEA, NetBeans
+
+Text (Hello, World!) -> source code (HelloWorld.java) -> bytecode (HelloWorld.class) -> machine code (HelloWorld.exe)
