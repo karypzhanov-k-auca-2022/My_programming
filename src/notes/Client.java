@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Client {
     private List<Notes> notesList;
+    private Notes note;
     private String name;
     private String phoneNummbe;
     private String email;
@@ -13,6 +14,19 @@ public class Client {
         this.name = name;
         this.phoneNummbe = phoneNummbe;
         this.email = email;
+    }
+
+    public void addNotes(String title, String content, String date, String time) {
+        Notes notes = new Notes(title, content, date, time);
+        notesList.add(notes);
+    }
+
+    public Notes getNote() {
+        return note;
+    }
+
+    public void setNote(Notes note) {
+        this.note = note;
     }
 
     public List<Notes> getNotesList() {
@@ -45,6 +59,10 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void addNotes(Notes notes) {
+        notesList.add(notes);
     }
 
 }

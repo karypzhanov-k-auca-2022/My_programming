@@ -54,4 +54,14 @@ public class Notes {
         this.time = time;
     }
 
+    @Override
+    public String toString() {
+        return "Notes{" +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                '}';
+    }
+
 }
