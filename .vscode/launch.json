@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "note",
+            "request": "launch",
+            "mainClass": "notes.note",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
             "name": "train_binary_search_from_library",
             "request": "launch",
             "mainClass": "practice.train_binary_search_from_library",
