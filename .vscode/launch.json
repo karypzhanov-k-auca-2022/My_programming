@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "practice",
+            "request": "launch",
+            "mainClass": "practice",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
             "name": "NoteApp",
             "request": "launch",
             "mainClass": "notes.NoteApp",
