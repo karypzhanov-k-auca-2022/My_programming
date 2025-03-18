@@ -5,7 +5,7 @@ public class Notes {
     private String content;
     private String date;
     private String time;
-
+    int numofNotes = 0;
 
     public String getTitle() {
         return title;
@@ -52,6 +52,7 @@ public class Notes {
         this.content = content;
         this.date = date;
         this.time = time;
+        numofNotes++;
     }
 
     @Override

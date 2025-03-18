@@ -65,4 +65,11 @@ public class Client {
         notesList.add(notes);
     }
 
+    public void showNotes() {
+        System.out.println("Client{" + name + "} has the following notes:");
+        for (Notes notes : notesList) {
+            System.out.println(notes);
+        }
+
+    }
 }
