@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Container_With_Most_Water",
+            "request": "launch",
+            "mainClass": "Problems.leetcode.Container_With_Most_Water",
+            "projectName": "Prog_51ff05c1"
+        },
+        {
+            "type": "java",
             "name": "practice",
             "request": "launch",
             "mainClass": "practice",
