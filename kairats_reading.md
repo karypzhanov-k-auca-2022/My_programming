@@ -1,4 +1,4 @@
-Aggregation and Composition
+## Aggregation and Composition
 
 owner object - aggregating object
 it's class called - aggregating class
@@ -10,7 +10,7 @@ it's class called - aggregated class
 composition relationship - Student class and Name class, Name depends on Student
 aggregation relationship - Addres and Student. NO depends, can exist seperatly
 
-Plan to study part Java
+## Plan to study part Java
 
 1. Java Fundamentals: Variables, Operators, Primitives
 2. Java Fundamentals: One-Multi-dimensional Arrays, Class Arrays
@@ -26,7 +26,7 @@ Plan to study part Java
 
 https://github.com/borymskyi/roadmap-java-sng?tab=readme-ov-file#java-core link
 
-18.03.2025
+# 18.03.2025
 1. Java SE - Standard Edition (for Standard Desktop Applications)
 2. Java EE - Enterprise Edition (for Enterprise Applications)
 3. Java ME - Micro Edition or Mobile Applications (for Mobile Applications)
@@ -39,8 +39,10 @@ https://github.com/borymskyi/roadmap-java-sng?tab=readme-ov-file#java-core link
 
 Text (Hello, World!) -> source code (HelloWorld.java) -> bytecode (HelloWorld.class) -> machine code (HelloWorld.exe)
 
-Lesson 4: classes and objects
+## Lesson 4: classes and objects
 example:
+
+```java
 public class practice {
 
     public static void main(String[] args) {
@@ -59,3 +61,27 @@ public class practice {
         int maxSpeed = 100;
     }
 }
+```
+
+# 20.03.25
+## Spring App 
+for file pom.xml
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers-bom</artifactId>
+            <version>1.20.6</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+In Application properties we usaully write 
+1. sql connection
+2. show local hubernate
+3. admin password
+
