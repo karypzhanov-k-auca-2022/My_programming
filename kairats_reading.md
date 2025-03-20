@@ -85,3 +85,42 @@ In Application properties we usaully write
 2. show local hubernate
 3. admin password
 
+## Spring App 
+### road 1
+Create: 
+1. package 'model' -> class 'UserEntity' (here we create fields for our table)
+2. package 'dto' (data transfer object) -> class 'User' (here we create types which user will have)
+3. package "controller" -> class 'UserController' (here we create methods for our app), here we use @RestController
+   1. here we should connect 'UserContoller' with 'UserService'
+   2. 'UserContoller' will do *mapping*, and sends everything to 'UserService'
+   3. @RequerdArgsConstructor - creates constructor with all fields, connect with *final*
+4. package 'service' -> class 'UserService' (here we create methods for our app), here we use @Service
+    1. here we should connect 'UserService' with 'UserRepository'
+    2. 'UserService' will do *business logic*, and sends everything to 'UserRepository'
+    3. @RequerdArgsConstructor - creates constructor with all fields, connect with *final*
+5. package 'repository' -> interface 'UserRepository' (here we create methods for our table), extends JpaRepository<UserEntity, UUID>
+
+### road 2
+Create:
+1. in 'UserService' -> method 'createUser' (here we create user), using 'UserEntity', builder(), build(), save()
+
+check this moment in 'UserService'
+```java
+    public List<User> getAllUsers() {
+        return userRepository.findAll().stream()
+                .map(userEntity -> User.builder()
+                        .uuid(userEntity.getUuid())
+                        .username(userEntity.getUsername())
+                        .password(userEntity.getPassword())
+                        .name(userEntity.getName())
+                        .surname(userEntity.getSurname())
+                        .balance(userEntity.getBalance())
+                        .userRole(userEntity.getUserRole())
+                        .createdAt(userEntity.getCreatedAt())
+                        .build())
+                .toList();
+    }
+```
+2. in 'application.properties' -> add 'spring.jpa.hibernate.ddl-auto=update' (here we create table in our database)
+3. in 'compose.yml' -> add 'ports' (here we create connection between our app and database)
+4. create package 'scripts' -> 'init.sql' for start our database
