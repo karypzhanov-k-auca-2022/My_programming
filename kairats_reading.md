@@ -321,3 +321,23 @@ Set<String> set = new HashSet<>(); // Stored in heap
 Set<String> set = new LinkedHashSet<>(); // Maintains order
 Set<String> set = new TreeSet<>(); // Sorted
 ```
+
+## Spring Boot
+1. `scripts/init.sql` - database initialization.
+2. `application.properties` - SQL connection, Hibernate logging.
+3. `config/SecurityConfig` - security configuration (to send requests to `/api` without authentication).
+It all comes down to creating roles in Spring Security.
+4. send a POST request to `http://localhost:8080/api/users` with JSON body:
+```json
+{
+    "username": "wasja8986",
+    "password": "123456789",
+    "name": "Wasja",
+    "surname": "Pupkin",
+    "balance": "125.3"
+}
+```
+5. get all users with a GET request to `http://localhost:8080/api/users`.
+6. write tests
+7. check test separately
+8. check fully `mvn package`
