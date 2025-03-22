@@ -1,5 +1,7 @@
 package Human;
 
+import notes.NoteApp;
+
 class Human {
     String name;
     Car car;
@@ -34,6 +36,7 @@ class Human {
             h2.info();
             h2.increaseSalary();
             h2.info();
+
         }
     }
 

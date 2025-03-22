@@ -343,8 +343,7 @@ It all comes down to creating roles in Spring Security.
 8. check fully `mvn package`
 
 # 22.03.2025 
-## Constructors, Methods, Parameters, Arguments, overloading methods and constructors
-
+## 1. Constructors, 2. Methods, 3. Parameters, 4. Arguments, 5. Overloading methods 6. Overloading constructors 7. Packages
 void sum (int a, int b) - parameters
 sum (1, 2) - arguments
 
@@ -372,3 +371,12 @@ firstly write the long constructor and then write the short constructor by calli
         this(null, null, name, surname, 0.0);
     }
 ```
+
+### Access Modifiers `public`, `protected`, `default`, `private`
+1. `public` - accessible from anywhere.
+2. `protected` - accessible within the same package and subclasses.
+3. `default` - accessible within the same package.
+4. `private` - accessible within the same class.
+
+# 23.03.2025
+## `final` and `static` keywords
