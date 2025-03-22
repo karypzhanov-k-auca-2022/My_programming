@@ -342,11 +342,14 @@ It all comes down to creating roles in Spring Security.
 7. check test separately
 8. check fully `mvn package`
 
-# 22.03.2025
+# 22.03.2025 
+## Constructors, Methods, Parameters, Arguments, overloading methods and constructors
+
 void sum (int a, int b) - parameters
 sum (1, 2) - arguments
 
-## @Overloading
+### `@Overloading` methods
+different parameters and that allows us to use the same method name
 ```java
     public static void sum(int a, int b) {
         System.out.println(a + b);
@@ -355,5 +358,17 @@ sum (1, 2) - arguments
         System.out.println(a + b + c);
     }
 ```
-
-
+### `@Overloading` constructors
+firstly write the long constructor and then write the short constructor by calling the long constructor
+```java
+    public User(String username, String password, String name, String surname, double balance) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.balance = balance;
+    }
+    public User(String name, String surname) {
+        this(null, null, name, surname, 0.0);
+    }
+```
