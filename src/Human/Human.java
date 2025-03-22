@@ -11,7 +11,8 @@ class Human {
     }
 
     void increaseSalary() {
-        salary *= 2;
+        this.salary *= 2;
+        salary = salary * 2;
     }
 
     static class HumanTest1 {

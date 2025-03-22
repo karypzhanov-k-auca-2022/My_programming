@@ -341,3 +341,19 @@ It all comes down to creating roles in Spring Security.
 6. write tests
 7. check test separately
 8. check fully `mvn package`
+
+# 22.03.2025
+void sum (int a, int b) - parameters
+sum (1, 2) - arguments
+
+## @Overloading
+```java
+    public static void sum(int a, int b) {
+        System.out.println(a + b);
+    }
+    public static void sum(int a, int b, int c) {
+        System.out.println(a + b + c);
+    }
+```
+
+
