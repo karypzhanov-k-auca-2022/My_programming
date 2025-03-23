@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Emotional_sort",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.Emotional_sort",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "Human$HumanTest1",
             "request": "launch",
             "mainClass": "Human.Human$HumanTest1",
