@@ -378,5 +378,117 @@ firstly write the long constructor and then write the short constructor by calli
 3. `default` - accessible within the same package.
 4. `private` - accessible within the same class.
 
-# 23.03.2025
+# 23.03.25
+## Spring Boot
+1. Inverson of Control (IoC) - The principle of IoC is to invert the control of the flow of the program. Instead of the programmer controlling the flow of the program, the framework controls it.
+2. Application Context - The Application Context is the central interface within a Spring application for providing configuration information to the application.
+3. Dependency Injection - (Внедрение зависимостей) это процесс предоставления внешней зависимости программному компоненту.
+   1. Example without DI:
+    ```java
+    class Engine {
+    public void start() {
+        System.out.println("Двигатель запущен!");
+    }
+ 
+    class Car {
+    private Engine engine = new Engine(); // class Car creates an instance of Engine
+
+    public void drive() {
+        engine.start();
+        System.out.println("Машина поехала!");
+    }
+
+
+    public class Main {
+        public static void main(String[] args) {
+        Car car = new Car();
+        car.drive();
+        }
+    }
+    }
+    }
+    ```
+   2. Example with DI:
+    ```java
+    interface Engine {
+    void start();
+    }
+
+    class PetrolEngine implements Engine {
+        @Override
+    public void start() {
+        System.out.println("Бензиновый двигатель запущен!");
+    }
+    }
+
+    class ElectricEngine implements Engine {
+        @Override
+        public void start() {
+            System.out.println("Электрический двигатель запущен!");
+        }
+    }
+
+    class Car {
+        private Engine engine;
+
+        public Car(Engine engine) { // Engine внедряется извне
+            this.engine = engine;
+        }
+
+        public void drive() {
+            engine.start();
+            System.out.println("Машина поехала!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Engine engine = new PetrolEngine(); // Выбор двигателя извне
+            Car car = new Car(engine);
+            car.drive();
+
+            Engine electricEngine = new ElectricEngine();
+            Car electricCar = new Car(electricEngine);
+            electricCar.drive();
+        }
+    }
+
+4. Dependency Injection: 
+   1. Constructor Injection - внедрение зависимости через конструктор.
+      1. Example:
+      ```java
+        public class UserService {
+            private final UserRepository userRepository;
+
+            @Autowired
+            public UserService(UserRepository userRepository) {
+                this.userRepository = userRepository;
+            }
+
+            
+        }
+        ``` 
+   2. Setter Injection - внедрение зависимости через сеттер.
+      1. Example:
+      ```java
+        public class UserService {
+            private UserRepository userRepository;
+
+            public void setUserRepository(UserRepository userRepository) {
+                this.userRepository = userRepository;
+            }
+        }
+        ```
+   3. Field Injection - внедрение зависимости через поле. 
+      1. Example:
+      ```java
+        public class UserService {
+            @Autowired
+            private UserRepository userRepository;
+        }
+        ```
+   
+5. After integration `UserService` to Spring container then `UserService` also becomes a `@Bean` and we can use it in other classes.
+
+
 ## `final` and `static` keywords
