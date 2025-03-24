@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SumStringsAsNumbers",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.SumStringsAsNumbers",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "Emotional_sort",
             "request": "launch",
             "mainClass": "Problems.code_wars.Emotional_sort",
