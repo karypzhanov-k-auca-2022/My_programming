@@ -349,35 +349,15 @@ Additional:
 Map<String, Integer> map = new HashMap<>(); // Stored in heap
 Map<String, Integer> map = new LinkedHashMap<>(); // Maintains order
 Map<String, Integer> map = new TreeMap<>(); // Sorted
-
-map.
-
-put("Alice",1);
-map.
-
-put("Bob",2);
-map.
-
-put("Charlie",3);
-
-map.
-
-get("Alice"); // 1
-map.
-
-containsKey("Alice"); // true
-map.
-
-remove("Alice"); // remove
-map.
-
-keySet(); // all keys
-map.
-
-values(); // all values
-map.
-
-getOrDefault("Alice",0); // 1
+map.put("Alice", 1);
+map.put("Bob", 2);
+map.put("Charlie", 3);
+map.get("Alice"); // 1
+map.containsKey("Alice"); // true
+map.remove("Alice"); // remove
+map.keySet(); // all keys
+map.values(); // all values
+map.getOrDefault("Alice", 0); // 1
 ```
 
 ### Using `Set`
@@ -624,5 +604,11 @@ public User(String name, String surname) {
 `@Lazy` - to solve `circular dependencies` (`ClassA` depends on `ClassB` and `ClassB` depends on `ClassA`).
 It tells Spring to create a proxy object and inject it when needed.
 
+# 25.03.25
+## Spring Boot @Scope, @Singleton, @Prototype
+1. `@Scope("singleton")` - beans are created once and shared across the application.
+   1. same links if we check task1 and task2
+2. `@Scope("prototype")` - beans are created each time they are requested.
+   2. different links if we check task1 and task2
 
 ## `final` and `static` keywords
