@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SoManyPermutations",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.SoManyPermutations",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
+            "name": "NicknameGenerator",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.NicknameGenerator",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
+            "name": "practice",
+            "request": "launch",
+            "mainClass": "practice",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "SumStringsAsNumbers",
             "request": "launch",
             "mainClass": "Problems.code_wars.SumStringsAsNumbers",

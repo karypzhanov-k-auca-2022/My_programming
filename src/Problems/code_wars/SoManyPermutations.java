@@ -11,19 +11,27 @@ public class SoManyPermutations {
                 permutations.add(s);
                 return permutations;
             }
-            
-            int indexToRemove = 0;
 
-            for (int i = 0; i < s.length(); i++) {
-                String newString = s.substring(0, indexToRemove) + s.substring(indexToRemove + 1);
-                List<String> newPermutations = singlePermutations(newString);
-
-                for (String permutation : newPermutations) {
-                    permutations.add(s.charAt(indexToRemove) + permutation);
-                }
-                
-                indexToRemove++;
+            if(s.length() == 2 && s.charAt(0) == s.charAt(1)) {
+                permutations.add(s);
+                return permutations;
+            } else if(s.length() == 2) {
+                permutations.add(s);
+                permutations.add(s.charAt(1) + "" + s.charAt(0));
+                return permutations;
             }
+            
+            for (int i = 0; i < s.length(); i++) {
+                String shorter = s.substring(0, i) + s.substring(i + 1); // remove the character at index i
+
+                for (String perm : singlePermutations(shorter)) {
+                    String newPerm = s.charAt(i) + perm;
+                    if (!permutations.contains(newPerm)) {
+                        permutations.add(newPerm);
+                    }
+                }
+            }
+
             return permutations;
     }
 
