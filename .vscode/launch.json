@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Howmanynumbers",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.Howmanynumbers",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "SoManyPermutations",
             "request": "launch",
             "mainClass": "Problems.code_wars.SoManyPermutations",
