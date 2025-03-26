@@ -605,10 +605,12 @@ public User(String name, String surname) {
 It tells Spring to create a proxy object and inject it when needed.
 
 # 25.03.25
-## Spring Boot @Scope, @Singleton, @Prototype
+## Spring Boot @Scope, @Singleton, @Prototype. 
 1. `@Scope("singleton")` - beans are created once and shared across the application.
    1. same links if we check task1 and task2
 2. `@Scope("prototype")` - beans are created each time they are requested.
    2. different links if we check task1 and task2
+
+## Bean Lifecycle
 
 ## `final` and `static` keywords
