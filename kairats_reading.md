@@ -629,4 +629,36 @@ It tells Spring to create a proxy object and inject it when needed.
 8. Вызов метода destroy
 9. Закрытие контейнера
 
+## Properties 
+1. We use different properties files for different environments.
+   1. for example: `application-dev.properties`, `application-test.properties`, `application-prod.properties`
+2. In properties files we use _**Spring Expression Language**_ (SpEL) to inject values.
+   2. Example:
+   ```java
+    import org.springframework.beans.factory.annotation.Value;@Value("${app.name}") // for primitive types
+     
+    @Value("${task.name}")
+    private String name;
+
+    @Value("${task.duration}")
+    private Long duration;
+
+    @Value("#{'${list.values}'.split(',')}")
+    private List<Integer> values;
+
+    @Value("#{'${set.values}'.split(',')}")
+    private List<String> setValues;
+
+    @Value("#{'${map.values}'.split(',')}")
+    private Map<String, Integer> mapValues;
+    
+    // in properties file shoudl be
+    task.name= "main-task"
+    task.duration= 120
+    
+    list.values= 123,456,789
+    set.values= abc,def,ghi
+    map.values= {key1: 200,key2: 300}
+   ```
+
 ## `final` and `static` keywords
