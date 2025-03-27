@@ -611,6 +611,22 @@ It tells Spring to create a proxy object and inject it when needed.
 2. `@Scope("prototype")` - beans are created each time they are requested.
    2. different links if we check task1 and task2
 
-## Bean Lifecycle
+# 27.03.25
+## Bean Lifecycle @PostConstruct, @PreDestroy
+1. `@PostConstruct` - method is called after the bean is created and dependencies are injected.
+2. `@PreDestroy` - method is called before the bean is destroyed 
+   2. `@Scope("singleton")` - in application context, `@PreDestroy` is called automatically
+   2. `@Scope("prototype")` - in not application context, `@PreDestroy` we should call manually
+3. 
+
+1. Запуск приложения
+2. Старт контейнера
+3. Создание бинов
+4. Внедрение зависимостей
+5. Вызов метода init 
+6. бин готов
+7. РАБОТА ПРИЛОЖЕНИЯ
+8. Вызов метода destroy
+9. Закрытие контейнера
 
 ## `final` and `static` keywords
