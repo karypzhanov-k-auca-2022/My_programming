@@ -38,26 +38,25 @@ public class Sum3 {
                 right--;
             } else {
                 result.add(Arrays.asList(nums[startIndex], nums[left], nums[right]));
-            }
 
-            while (left < right && nums[left] == nums[left + 1]) {
+                while (left < right && nums[left] == nums[left + 1]) {
+                    left++;
+                }
+
+                while (left < right && nums[right] == nums[right - 1]) {
+                    right--;
+                }
+
                 left++;
-            }
-
-            while (left < right && nums[right] == nums[right--]) {
                 right--;
             }
-
-            left++;
-            right--;
         }
     }
 
     public static void main(String[] args) {
         Sum3 sum = new Sum3();
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> result;
         System.out.println(sum.threeSum(nums));
     }
 }
-
