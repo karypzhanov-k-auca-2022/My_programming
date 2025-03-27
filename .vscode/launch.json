@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Sum3",
+            "request": "launch",
+            "mainClass": "Problems.leetcode.Sum3",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "Howmanynumbers",
             "request": "launch",
             "mainClass": "Problems.code_wars.Howmanynumbers",
