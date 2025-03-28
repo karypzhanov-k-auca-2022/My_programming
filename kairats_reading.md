@@ -660,5 +660,8 @@ It tells Spring to create a proxy object and inject it when needed.
     set.values= abc,def,ghi
     map.values= {key1: 200,key2: 300}
    ```
-
+# 28.03.25
 ## `final` and `static` keywords
+1. `final` - constant value, cannot be changed.
+2. `static` - belongs to the class, not to the object. (for example to count how many objects were created)
+   
