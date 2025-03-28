@@ -664,4 +664,5 @@ It tells Spring to create a proxy object and inject it when needed.
 ## `final` and `static` keywords
 1. `final` - constant value, cannot be changed.
 2. `static` - belongs to the class, not to the object. (for example to count how many objects were created)
+    2. We can call static methods without creating an object.
    
