@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RangeExtraction",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.RangeExtraction",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "DrivingLicence",
             "request": "launch",
             "mainClass": "Problems.code_wars.DrivingLicence",
