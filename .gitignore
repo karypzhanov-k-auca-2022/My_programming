@@ -1,11 +1,15 @@
-# Игнорировать все .class файлы
+# ignore all files in the root directory
 *.class
 
-# Игнорировать папки скомпилированными файлами
+# ingore Java class files
 /bin/
 /out/
 
-# Игнорировать временные файлы IDE
+/bin/
+/out/
+*.class
+
+# ignore all files in the src directory
 *.log
 *.idea/
 *.iml
