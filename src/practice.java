@@ -25,21 +25,14 @@ public class practice {
         void abc() {
             age++;
             count++;
+        }
+
+        static void abcd() {
+            count++;
+        }
+
     }
-
-    static void abcd(){
-        count++;
-    }
-
-
-    
 
     public static void main(String[] args) {
-        Human human1 = new practice().new Human("Alice", 30);
-        human1.showInfo();
-        Human human2 = new practice().new Human("Bob", 25);
-        human2.showInfo();
-
-        Human.showInfoo();
     }
 }

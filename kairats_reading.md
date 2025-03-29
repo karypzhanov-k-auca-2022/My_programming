@@ -664,7 +664,14 @@ It tells Spring to create a proxy object and inject it when needed.
 ## `final` and `static` keywords
 1. `final` - constant value, cannot be changed.
 2. `static` - belongs to the class, not to the object. (for example to count how many objects were created)
-    2. We can call static methods without creating an object.
-    2. We can call static methods from another class
-    3. We can't use non-static variables in static methods
-   
+    2. We can call `static` methods without creating an object.
+    2. We can call `static` methods from another class
+    3. We can't use `non-static` variables and methods in `static` methods
+    4. We can using class name to call `static` methods
+3. If variable is `static` and `final` then it should be initialized in the class, example:
+```java
+public class User {
+    private static final String DEFAULT_NAME = "John Doe";
+    private static final int DEFAULT_AGE = 18;
+}
+```
