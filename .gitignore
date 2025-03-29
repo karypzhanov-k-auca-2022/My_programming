@@ -1,15 +1,11 @@
-# ignore all files in the root directory
+# Ignore all .class files
 *.class
 
-# ingore Java class files
+# Ignore folders with compiled files
 /bin/
 /out/
 
-/bin/
-/out/
-*.class
-
-# ignore all files in the src directory
+# Ignore temporary IDE files
 *.log
 *.idea/
 *.iml
