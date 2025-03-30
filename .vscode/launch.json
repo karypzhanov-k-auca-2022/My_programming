@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "practice",
+            "request": "launch",
+            "mainClass": "practicee.practice",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
+            "name": "Test1",
+            "request": "launch",
+            "mainClass": "practicee.Test1",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "RangeExtraction",
             "request": "launch",
             "mainClass": "Problems.code_wars.RangeExtraction",

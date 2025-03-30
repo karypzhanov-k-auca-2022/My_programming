@@ -675,3 +675,8 @@ public class User {
     private static final int DEFAULT_AGE = 18;
 }
 ```
+
+# 29.03.25
+## Spring Boot, Spring AOP
+
+
