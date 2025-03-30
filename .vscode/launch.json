@@ -5,6 +5,13 @@
             "type": "java",
             "name": "practice",
             "request": "launch",
+            "mainClass": "practice.practice",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
+            "name": "practice",
+            "request": "launch",
             "mainClass": "practicee.practice",
             "projectName": "my_programming_cc05ac4d"
         },
