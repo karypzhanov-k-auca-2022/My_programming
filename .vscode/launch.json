@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "findCommonElementss",
+            "request": "launch",
+            "mainClass": "Problems.code_wars.findCommonElementss",
+            "projectName": "my_programming_cc05ac4d"
+        },
+        {
+            "type": "java",
             "name": "practice",
             "request": "launch",
             "mainClass": "practice.practice",
