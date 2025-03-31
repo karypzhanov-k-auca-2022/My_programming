@@ -1,32 +1,38 @@
 package Problems.code_wars;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class findCommonElementss {
-    static List<Integer> findCommonElements(int[] arrA, int[] arrB, int[] rng, String wanted) {
+    public static List<Integer> findCommonElements(int[] arrA, int[] arrB, int[] rng, String wanted) {
         List<Integer> result = new ArrayList<>();
-        boolean isEven = wanted.equals("even");
+        Map<Integer, Integer> countA = new HashMap<>();
+        Map<Integer, Integer> countB = new HashMap<>();
+        Set<Integer> commonElements = new HashSet<>();
 
-        Set<Integer> setA = new HashSet<>();
+        boolean isEven = wanted.equalsIgnoreCase("even");
+
         for (int num : arrA) {
-            setA.add(num);
+            countA.put(num, countA.getOrDefault(num, 0) + 1);
         }
 
-        Set<Integer> commonElements = new HashSet<>();
         for (int num : arrB) {
-            if (setA.contains(num)) {
+            countB.put(num, countB.getOrDefault(num, 0) + 1);
+        }
+
+        for (int num : countA.keySet()) {
+            if (countA.getOrDefault(num, 0) >= 2 && countB.getOrDefault(num, 0) >= 2) {
                 commonElements.add(num);
             }
         }
 
         for (int num : commonElements) {
             if (num >= rng[0] && num <= rng[1]) {
-                if (isEven && num % 2 == 0) {
-                    result.add(num);
-                } else if (!isEven && num % 2 != 0) {
+                if ((isEven && num % 2 == 0) || (!isEven && num % 2 != 0)) {
                     result.add(num);
                 }
             }

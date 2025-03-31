@@ -352,7 +352,7 @@ Map<String, Integer> map = new TreeMap<>(); // Sorted
 map.put("Alice", 1);
 map.put("Bob", 2);
 map.put("Charlie", 3);
-map.get("Alice"); // 1
+map.get("Alice"); // берет что внутри Alice
 map.containsKey("Alice"); // true
 map.remove("Alice"); // remove
 map.keySet(); // all keys
