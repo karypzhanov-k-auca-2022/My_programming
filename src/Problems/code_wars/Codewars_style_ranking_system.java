@@ -20,10 +20,6 @@ public class Codewars_style_ranking_system {
                 return;
             }
 
-            if (rank == 8) {
-                progress = 0;
-            }
-
             int rankDifference;
             if (rankActivity > 0 && rank < 0) { // rankActivity is positive and rank is negative
                 rankDifference = rankActivity - rank - 1;
@@ -53,6 +49,10 @@ public class Codewars_style_ranking_system {
                 if (rank == 0) {
                     this.rank = 1;
                 }
+            }
+            
+            if (rank == 8) {
+                progress = 0;
             }
         }
     }
