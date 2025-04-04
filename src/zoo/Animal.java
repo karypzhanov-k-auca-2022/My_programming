@@ -1,6 +1,6 @@
 package zoo;
 public class Animal {
-    private String name;
+    protected String name;
     private int age;
     private Color color;
 
