@@ -11,11 +11,11 @@ public class tAreaa {
                 count++; 
             }
         }
-        
+
         int height = count - 1;
         
         int base = height;
         
-        return (float) (base * height) / 2.0f;
+        return (float) (base * height) / 2.0f; // area of triangle
     }
 }
