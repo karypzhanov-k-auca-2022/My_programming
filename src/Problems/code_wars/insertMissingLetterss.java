@@ -2,6 +2,7 @@ package Problems.code_wars;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class insertMissingLetterss {
     public static String insertMissingLetters(String str) {
@@ -16,7 +17,7 @@ public class insertMissingLetterss {
         }
 
         // know the missing characters in the string
-        Set<Character> missingChars = new HashSet<>();
+        Set<Character> missingChars = new TreeSet<>();
         for (char c : alphabet) {
             if (!uniqChars.contains(c)) {
                 missingChars.add(c);
