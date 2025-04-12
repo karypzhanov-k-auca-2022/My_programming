@@ -678,5 +678,6 @@ public class User {
 
 # 29.03.25
 ## Spring Boot, Spring AOP
-
-
+1. `@Aspect` - to mark a class as an aspect.
+2. `@Before` - to mark a method as a before advice.
+3. `@After` - to mark a method as an after advice.
