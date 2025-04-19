@@ -681,3 +681,10 @@ public class User {
 1. `@Aspect` - to mark a class as an aspect.
 2. `@Before` - to mark a method as a before advice.
 3. `@After` - to mark a method as an after advice.
+
+# 19.04.25
+## Inheritance 
+1. `this` - in constructor to call another constructor from current class
+   1. this(1, 2) - calls constructor with 1 and 2 parameters
+2. `super` - in constructor to call constructor from parent class
+   1. super(1, 2) - calls constructor with 1 and 2 parameters from parent class
