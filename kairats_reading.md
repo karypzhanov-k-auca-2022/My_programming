@@ -688,3 +688,6 @@ public class User {
    1. this(1, 2) - calls constructor with 1 and 2 parameters
 2. `super` - in constructor to call constructor from parent class
    1. super(1, 2) - calls constructor with 1 and 2 parameters from parent class
+
+## Inheritance chain
+1. `Object` -> `Parent` -> `Child`
