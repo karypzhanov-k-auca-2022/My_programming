@@ -698,3 +698,155 @@ public class User {
 `protected` - in the same package and subclasses
 `default` - in the same package
 `public` - everywhere
+
+# Polymorphism Раннее и Позднее связывание в Java
+
+## Раннее связывание (Early Binding / Static Binding)
+
+**Определение:** Происходит **на этапе компиляции**. Компилятор определяет, какой именно код будет выполнен, основываясь на **типе ссылки**. Применяется к полям, `static`, `final` и `private` методам, так как они либо не могут быть переопределены полиморфно, либо их доступ ограничен.
+
+**Пример кода (поля, static и final методы):**
+
+```java
+// --- Классы для демонстрации раннего связывания ---
+class ParentEarly {
+    // Поле - связывание происходит по типу ссылки
+    String type = "Parent";
+
+    // Static метод - связывание происходит по типу ссылки
+    static void printStatic() {
+        System.out.println("Parent Static Method");
+    }
+
+    // Final метод - нельзя переопределить, связывание раннее
+    final void printFinal() {
+        System.out.println("Parent Final Method");
+    }
+
+    // Private метод - доступен только здесь, связывание раннее
+    private void printPrivate() {
+         System.out.println("Parent Private Method");
+    }
+
+    // Для примера вызова private метода
+    public void callPrivateFromParent() {
+        printPrivate();
+    }
+}
+
+class ChildEarly extends ParentEarly {
+    // Скрывает поле 'type' из ParentEarly (не переопределяет!)
+    String type = "Child";
+
+    // Скрывает static метод из ParentEarly (не переопределяет!)
+    static void printStatic() {
+        System.out.println("Child Static Method");
+    }
+
+    // Нельзя переопределить printFinal() и printPrivate()
+}
+
+// --- Класс для демонстрации вызовов ---
+class MainEarlyBinding {
+    public static void main(String[] args) {
+        ParentEarly parentRefToParent = new ParentEarly(); // Ссылка ParentEarly -> Объект ParentEarly
+        ParentEarly parentRefToChild = new ChildEarly();   // Ссылка ParentEarly -> Объект ChildEarly (Полиморфизм)
+        ChildEarly childRefToChild = new ChildEarly();     // Ссылка ChildEarly -> Объект ChildEarly
+
+        System.out.println("--- Раннее связывание (поля) ---");
+        // Доступ к полям определяется типом ссылки (компилятором)
+        System.out.println("parentRefToParent.type: " + parentRefToParent.type); // Ожидается: Parent
+        System.out.println("parentRefToChild.type: " + parentRefToChild.type);   // Ожидается: Parent (по типу ссылки!)
+        System.out.println("childRefToChild.type: " + childRefToChild.type);     // Ожидается: Child
+
+        System.out.println("\n--- Раннее связывание (static методы) ---");
+        // Вызов static методов через ссылки определяется типом ссылки (компилятором)
+        parentRefToParent.printStatic(); // Ожидается: Parent Static Method
+        parentRefToChild.printStatic();   // Ожидается: Parent Static Method (по типу ссылки!)
+        childRefToChild.printStatic();     // Ожидается: Child Static Method
+        // (Предпочтительный способ вызова static: ParentEarly.printStatic(); ChildEarly.printStatic();)
+
+        System.out.println("\n--- Раннее связывание (final методы) ---");
+        // Вызов final методов определяется типом ссылки (компилятором), т.к. нет переопределения
+        parentRefToParent.printFinal(); // Ожидается: Parent Final Method
+        parentRefToChild.printFinal();   // Ожидается: Parent Final Method
+        childRefToChild.printFinal();     // Ожидается: Parent Final Method
+
+        System.out.println("\n--- Раннее связывание (private методы) ---");
+        // Private методы доступны только внутри своего класса.
+        // Связывание происходит на этапе компиляции внутри класса ParentEarly.
+        parentRefToParent.callPrivateFromParent(); // Ожидается: Parent Private Method
+        // parentRefToChild.printPrivate(); // Ошибка компиляции - private метод недоступен
+        // childRefToChild.printPrivate();  // Ошибка компиляции - private метод недоступен
+    }
+}
+```
+
+## Позднее связывание (Late Binding / Dynamic Binding)
+**Определение:** Происходит **на этапе выполнения**. Компилятор не знает, какой именно код будет выполнен, пока программа не запустится. Применяется к `virtual` и `override` методам, так как они могут быть переопределены в подклассах.
+**Пример кода (методы):**
+
+```java
+// --- Классы для демонстрации позднего связывания ---
+class ParentLate {
+    // Метод, который будет переопределён в подклассе
+    void print() {
+        System.out.println("Parent Method");
+    }
+}
+class ChildLate extends ParentLate {
+    // Переопределение метода из родительского класса
+    @Override
+    void print() {
+        System.out.println("Child Method");
+    }
+}
+// --- Класс для демонстрации вызовов ---
+class MainLateBinding {
+    public static void main(String[] args) {
+        ParentLate parentRefToParent = new ParentLate(); // Ссылка ParentLate -> Объект ParentLate
+        ParentLate parentRefToChild = new ChildLate();   // Ссылка ParentLate -> Объект ChildLate (Полиморфизм)
+        ChildLate childRefToChild = new ChildLate();     // Ссылка ChildLate -> Объект ChildLate
+
+        System.out.println("--- Позднее связывание (методы) ---");
+        // Вызов методов определяется типом объекта (на этапе выполнения)
+        parentRefToParent.print(); // Ожидается: Parent Method
+        parentRefToChild.print();   // Ожидается: Child Method (по типу объекта!)
+        childRefToChild.print();     // Ожидается: Child Method
+    }
+}
+```
+
+## The keyword `instanceof`
+**Определение:** Используется для проверки, является ли объект экземпляром определённого класса или интерфейса. Возвращает `true` или `false`.
+**Пример кода:**
+
+```java
+// --- Классы для демонстрации instanceof ---
+class ParentInstanceOf {
+    void print() {
+        System.out.println("Parent Method");
+    }
+}
+class ChildInstanceOf extends ParentInstanceOf {
+    @Override
+    void print() {
+        System.out.println("Child Method");
+    }
+}
+// --- Класс для демонстрации вызовов ---
+class MainInstanceOf {
+    public static void main(String[] args) {
+        ParentInstanceOf parent = new ParentInstanceOf();
+        ChildInstanceOf child = new ChildInstanceOf();
+
+        System.out.println("--- instanceof ---");
+        // Проверка типа объекта
+        System.out.println("parent instanceof ParentInstanceOf: " + (parent instanceof ParentInstanceOf)); // true
+        System.out.println("child instanceof ChildInstanceOf: " + (child instanceof ChildInstanceOf)); // true
+        System.out.println("child instanceof ParentInstanceOf: " + (child instanceof ParentInstanceOf)); // true
+        System.out.println("parent instanceof ChildInstanceOf: " + (parent instanceof ChildInstanceOf)); // false
+    }
+}
+```
+
