@@ -72,5 +72,6 @@
         "markdown": true,
         "scminput": false,
         "java": false
-    }
+    },
+    "java.debug.settings.onBuildFailureProceed": true
 }

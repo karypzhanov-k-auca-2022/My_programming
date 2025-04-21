@@ -689,5 +689,12 @@ public class User {
 2. `super` - in constructor to call constructor from parent class
    1. super(1, 2) - calls constructor with 1 and 2 parameters from parent class
 
+# 21.04.25
 ## Inheritance chain
 1. `Object` -> `Parent` -> `Child`
+
+## Access Modifiers
+`private` - only in the same class
+`protected` - in the same package and subclasses
+`default` - in the same package
+`public` - everywhere
