@@ -4,9 +4,14 @@
 # Ignore folders with compiled files
 /bin/
 /out/
+/target/
+/build/
 
 # Ignore temporary IDE files
 *.log
 *.idea/
 *.iml
 .vscode/
+
+# Ignore OS generated files
+.DS_Store
