@@ -50,6 +50,10 @@ public class strStrr {
         return haystack.indexOf(needle);
     }
 
+    public int strStr4(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+
     public static void main(String[] args) {
         strStrr strStrr = new strStrr();
         System.out.println(strStrr.strStr("abc", "c"));
