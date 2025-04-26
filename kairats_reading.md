@@ -862,5 +862,13 @@ class MainInstanceOf {
 HashMap, HashSet и других хэш-коллекций. 
 Все объекты попадут в одну корзину, и поиск/вставка/удаление станут медленными `(O(n)` вместо `O(1))`.
 
-## `@Override` annotation
-1. Используется для переопределения методов родительского класса.
+# 26.04.25
+## Abstract classes
+1. `abstract` - cannot be instantiated, can have abstract and non-abstract methods.
+2. `abstract` method - must be implemented in subclasses.
+3. `abstract` class - can have constructors, fields, and methods.
+
+## Interfaces
+1. `interface` - cannot be instantiated, can have abstract methods and default methods.
+2. `fields`, `methods` - all fields are `public static final`, all methods are `public abstract` by default.
+3. `default methods` - can provide a default implementation in the interface.
