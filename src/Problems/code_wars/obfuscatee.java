@@ -17,6 +17,12 @@ public class obfuscatee {
         return res.toString();
     }
 
+    // 2 variant
+    public static String obfuscate2(String email) {
+
+        return email.replace("@", " [at] ").replace(".", " [dot] ");
+    }
+
     public static void main(String[] args) {
         System.out.println(obfuscate("jim.kuback@ennerman-hatano.com"));
     }
