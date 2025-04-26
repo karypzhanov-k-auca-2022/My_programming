@@ -872,3 +872,10 @@ HashMap, HashSet и других хэш-коллекций.
 1. `interface` - cannot be instantiated, can have abstract methods and default methods.
 2. `fields`, `methods` - all fields are `public static final`, all methods are `public abstract` by default.
 3. `default methods` - can provide a default implementation in the interface.
+
+## Interfaces default methods
+1. `default` - can provide a default implementation in the interface.
+2. `static` - methods must be called on the interface itself.
+3. `static` methods - cannot be @overridden in the implementing class.
+4. 
+5. 
