@@ -877,5 +877,11 @@ HashMap, HashSet и других хэш-коллекций.
 1. `default` - can provide a default implementation in the interface.
 2. `static` - methods must be called on the interface itself.
 3. `static` methods - cannot be @overridden in the implementing class.
-4. 
-5. 
+   
+# 27.04.25
+## Cloning Objects
+1. `shallow copy` - creates a new object, but the fields are references to the same objects.
+2. `deep copy` - creates a new object and copies the values of the fields.
+
+3. `need to implement Cloneable interface.`
+4. `serialization` - The factory method, on the other hand, is the safest one.  
