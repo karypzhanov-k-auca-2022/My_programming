@@ -1,66 +1,72 @@
 package Problems.leetcode;
 
-import java.util.ArrayList;
-
 public class multiplyy {
     public String multiply(String num1, String num2) {
-        int rest = Math.abs(num1.length() - num2.length());
+        if (num1.equals("0") || num2.equals("0")) {
+            return "0";
+        }
 
+        int rest = Math.abs(num1.length() - num2.length());
         StringBuffer num11 = new StringBuffer(num1);
         StringBuffer num22 = new StringBuffer(num2);
 
         if (num1.length() < num2.length()) {
-            for (int i = 0; i < rest; i++) {
-                num11.insert(0, "0");
-            }
+            for (int i = 0; i < rest; i++)
+                num11.insert(0, '0');
         } else if (num1.length() > num2.length()) {
-            for (int i = 0; i < rest; i++) {
-                num22.insert(0, "0");
-            }
+            for (int i = 0; i < rest; i++)
+                num22.insert(0, '0');
         }
 
-        String[] lines = new String[num22.length()];
+        int n = num22.length();
+        String[] lines = new String[n];
         int countLines = 0;
-
-        for (int i = num22.length() - 1; i >= 0; i--) {
-            StringBuffer currLineRes = new StringBuffer();
-            int remainder = 0;
-            int res = 0;
-
-            char cOne = num22.charAt(i);
-            int curr1 = Character.getNumericValue(cOne);
-
+        for (int i = n - 1; i >= 0; i--) {
+            StringBuilder currLineRes = new StringBuilder();
+            int carry = 0;
+            int d2 = num22.charAt(i) - '0';
             for (int j = num11.length() - 1; j >= 0; j--) {
-                char cTwo = num11.charAt(j);
-                int curr2 = Character.getNumericValue(cTwo);
-                res += (curr1 * curr2);
-
-                if (res >= 10) {
-                    remainder = res / 10;
-                    currLineRes.insert(0, String.valueOf(res % 10));
-                } else {
-                    currLineRes.insert(0, String.valueOf(res));
-                }
-                res = remainder;
-                remainder = 0;
+                int d1 = num11.charAt(j) - '0';
+                int prod = d1 * d2 + carry;
+                currLineRes.insert(0, prod % 10);
+                carry = prod / 10;
             }
-
-            lines[countLines] = currLineRes.toString();
-            countLines++;
+            if (carry > 0) {
+                currLineRes.insert(0, carry);
+            }
+            lines[countLines++] = currLineRes.toString();
         }
 
-        System.out.println(1);
-        return "";
+        String result = "0";
+        for (int k = 0; k < countLines; k++) {
+            StringBuilder shifted = new StringBuilder(lines[k]);
+            for (int z = 0; z < k; z++)
+                shifted.append('0');
+            result = addStrings(result, shifted.toString());
+        }
+
+        while (result.length() > 1 && result.charAt(0) == '0') {
+            result = result.substring(1);
+        }
+
+        return result;
+    }
+
+    private String addStrings(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int i = a.length() - 1, j = b.length() - 1, carry = 0;
+        while (i >= 0 || j >= 0 || carry != 0) {
+            int x = (i >= 0) ? a.charAt(i--) - '0' : 0;
+            int y = (j >= 0) ? b.charAt(j--) - '0' : 0;
+            int sum = x + y + carry;
+            sb.append(sum % 10);
+            carry = sum / 10;
+        }
+        return sb.reverse().toString();
     }
 
     public static void main(String[] args) {
-        multiplyy multiplyy1 = new multiplyy();
-
-        String num1 = "123888";
-        String num2 = "456";
-
-        System.out.println(multiplyy1.multiply(num1, num2));
-
-        System.out.println(28 / 10);
+        multiplyy solver = new multiplyy();
+        System.out.println(solver.multiply("9", "9"));
     }
 }
