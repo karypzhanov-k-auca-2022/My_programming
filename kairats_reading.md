@@ -885,3 +885,27 @@ HashMap, HashSet и других хэш-коллекций.
 
 3. `need to implement Cloneable interface.`
 4. `serialization` - The factory method, on the other hand, is the safest one.  
+
+## Smallor example
+1. `shallow copy` - should be `Clounable` and `clone()` method should be implemented.
+```java
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+```
+2.   `deep copy` - with interfaces
+```java
+    public Object clone() throws CloneNotSupportedException {
+        Student stud = (Student) super.clone();
+        stud.yearSet = (Date) this.yearSet.clone();
+        return stud;
+    }
+```
+3. `deep copy` - with constructors
+```java
+    public ClassA(ClassA other) {
+        this.field1 = other.getField1();
+        this.field2 = new String(other.getField2());
+    }
+```
+
