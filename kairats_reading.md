@@ -909,3 +909,13 @@ HashMap, HashSet и других хэш-коллекций.
     }
 ```
 
+# 28.04.25
+## Design Recommendations
+1. **No magic numbers and strings** - use constants `final static`. 
+2. **Single Responsibility Principle (SRP)** - class should solve one problem.
+3. **Constructor responsible for initializing the object's state** - avoid callinf methods in the constructor (`final`, `static`, `private`).
+4. **If class becomes too big, split it into smaller classes**
+5. **Methods should be small** - 25-30 lines or create a new class.
+6. **If method is used only by other methods, make it private**.
+7. **Same fragment of code should be in methods** - avoid code duplication.
+8. **Avoid long arguments** - use objects instead of primitive types.
