@@ -919,3 +919,6 @@ HashMap, HashSet и других хэш-коллекций.
 6. **If method is used only by other methods, make it private**.
 7. **Same fragment of code should be in methods** - avoid code duplication.
 8. **Avoid long arguments** - use objects instead of primitive types.
+
+# 29.04.25
+## Java Collections
