@@ -358,6 +358,7 @@ map.remove("Alice"); // remove
 map.keySet(); // all keys
 map.values(); // all values
 map.getOrDefault("Alice", 0); // 1
+(value, key) -> map.put(key, value); // put
 ```
 
 ### Using `Set`
