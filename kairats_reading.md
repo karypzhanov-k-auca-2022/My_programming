@@ -922,3 +922,4 @@ HashMap, HashSet и других хэш-коллекций.
 
 # 29.04.25
 ## Java Collections
+1. `Collection` - root interface for all collections.
