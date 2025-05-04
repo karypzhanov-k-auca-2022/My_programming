@@ -25,7 +25,7 @@ public class Matrix {
         return a[0].length;
     }
 
-    public int getElement(int i, int j, int value) throws MatrixException {
+    public int getElement(int i, int j) throws MatrixException {
         if (checkRange(i, j)) {
             return a[i][j];
         } else {

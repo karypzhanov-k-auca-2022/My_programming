@@ -921,6 +921,25 @@ HashMap, HashSet и других хэш-коллекций.
 7. **Same fragment of code should be in methods** - avoid code duplication.
 8. **Avoid long arguments** - use objects instead of primitive types.
 
-# 29.04.25
-## Java Collections
-1. `Collection` - root interface for all collections.
+# 04.05.25
+## Epam right correct Matrix logic
+1. class `Matrix` - matrix
+2. class `MatrixCreator` - create matrix
+3. class `MatrixException` - exception
+4. class `Multiplicator` - multiply matrix
+5. class `MatrixMain` - main class for matrix operations
+``` java
+    public static void main(String[] args) {
+            MatrixCreator creator = new MatrixCreator();
+            Matrix p = new Matrix(2, 3);
+            creator.fillRandomized(p, 2, 8);
+            System.out.println("Matrix first is: " + p);
+            Matrix q = new Matrix(3, 4);
+            creator.fillRandomized(q, 2, 7);
+            System.out.println("Matrix second is: " + q);
+            Multiplicator multiplicator = new Multiplicator();
+            Matrix result = multiplicator.multiply(p, q);
+            System.out.println("Matrices product is " + result);
+    }
+```
+

@@ -16,4 +16,15 @@ public class MatrixCreator {
             }
         }
     }
+
+    // extra method to create a 2D array with random values
+    public int[][] createArray(int n, int m, int minValue, int maxValue){
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = (int) (Math.random() * (maxValue - minValue) + minValue);
+            }
+        }
+        return array;
+    }
 }
