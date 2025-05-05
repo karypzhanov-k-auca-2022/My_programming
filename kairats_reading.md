@@ -922,7 +922,7 @@ HashMap, HashSet и других хэш-коллекций.
 8. **Avoid long arguments** - use objects instead of primitive types.
 
 # 04.05.25
-## Epam right correct Matrix logic
+## Epam decomposition 1 (Matrix)
 1. class `Matrix` - matrix
 2. class `MatrixCreator` - create matrix
 3. class `MatrixException` - exception
@@ -942,4 +942,32 @@ HashMap, HashSet и других хэш-коллекций.
             System.out.println("Matrices product is " + result);
     }
 ```
+## Epam decomposition 2 (Rational Number)
+1. class `RationalNumber` - rational number
+2. class `RationalNumbers` - like Main class
+3. class `RationalNumberInteractiveReader` - read rational number
 
+4. class `Command` - command
+   1. extends `PrintProductCommand` - print product
+   2. extends `PrintSumCommand` - print sum
+   3. extends `printQuotientCommand` - print quotient
+5. class `Conversation` - conversation
+
+## Immutable objects
+1. `final` - all fields should be `final`.
+2. `private` - all fields should be `private`.
+3. `no setters` - no setters for fields.
+
+## The Keyword `record`
+1. `record` - a special type of class in Java that is used to create immutable data classes.
+2. `record` - automatically generates `equals`, `hashCode`, and `toString` methods.
+3. `record` - automatically generates a constructor with all fields as parameters.
+
+``` java
+package by.epam.learn.immutable;
+public record ImmutableRec(String name, int id) {
+    void method() {}
+}
+```
+
+# 05.05.25
