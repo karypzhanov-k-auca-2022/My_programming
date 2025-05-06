@@ -969,5 +969,3 @@ public record ImmutableRec(String name, int id) {
     void method() {}
 }
 ```
-
-# 05.05.25
