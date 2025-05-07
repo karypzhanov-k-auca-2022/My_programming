@@ -969,3 +969,11 @@ public record ImmutableRec(String name, int id) {
     void method() {}
 }
 ```
+
+# 07.05.25
+## Epam Nested Classes
+1. `static class` - can be accessed without creating an instance of the outer class.
+2. `inner class` - can be accessed only through an instance of the outer class.
+   1. `class member` - can access all members of the outer class.
+   2. `local class` - can access all members of the outer class.
+   3. `anonymous class` - can access all members of the outer class.
