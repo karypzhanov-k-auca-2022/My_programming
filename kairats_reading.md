@@ -981,3 +981,16 @@ public record ImmutableRec(String name, int id) {
 ### Local classes
 1. declared in methods of the outer class
 2. They cannot be declared as `private`, `public`, `protected`, or `static`.
+
+### Anonymous classes
+1. no name
+``` java
+    new Runnable() {
+        public void run() {
+            System.out.println("Hello from anonymous class!");
+        }
+    };
+```
+2. used to create an interface object or abstract class
+3. no `constructor`, `private`, `public`, `protected`, `static` modifiers
+
