@@ -977,3 +977,7 @@ public record ImmutableRec(String name, int id) {
    1. `class member` - can access all members of the outer class.
    2. `local class` - can access all members of the outer class.
    3. `anonymous class` - can access all members of the outer class.
+
+### Local classes
+1. declared in methods of the outer class
+2. They cannot be declared as `private`, `public`, `protected`, or `static`.
