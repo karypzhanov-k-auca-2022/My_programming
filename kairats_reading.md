@@ -993,3 +993,7 @@ public record ImmutableRec(String name, int id) {
 ```
 2. used to create an interface object or abstract class
 3. no `constructor`, `private`, `public`, `protected`, `static` modifiers
+
+# 19.05.25
+## Epam
+
