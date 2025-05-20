@@ -994,6 +994,12 @@ public record ImmutableRec(String name, int id) {
 2. used to create an interface object or abstract class
 3. no `constructor`, `private`, `public`, `protected`, `static` modifiers
 
-# 19.05.25
-## Epam
-
+# 20.05.25
+## Epam Strings
+```java
+        String email = "user@example.com";
+        System.out.println(email.matches("\\w+@\\w+\\.\\w+")); // true
+```
+1. check only one symbol till the `@`
+2. check only one symbol after the `@` and before the `.`.
+3. check only one symbol after the `.`.
