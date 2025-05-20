@@ -1030,3 +1030,30 @@ public record ImmutableRec(String name, int id) {
     // test 6
     String formatString = "We are printing double variable (%f), string (\"%s\") and integer variable (%d).";
 System.out.println(String.format(formatString, 0.7, "Java", 10));
+```
+## StringBuilder and method
+```java
+public static void main(String [] args) {
+    StringBuilder str = new StringBuilder("Learning ");
+    updateString(str);
+    System.out.println(str);
+}
+static void updateString(StringBuilder string){
+    string.append("java!");
+}
+
+// Learning java!
+```
+
+## StringJoiner
+```java
+StringJoiner joiner = new StringJoiner(":", "<<", ">>");
+String result = joiner.add("blanc").add("rouge").add("blanc").toString();
+System.out.println(result);
+
+// <<blanc:rouge:blanc>>
+```
+
+## Regular Expressions
+![alt text](image.png)
+
