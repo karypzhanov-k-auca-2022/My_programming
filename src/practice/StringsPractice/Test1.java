@@ -93,5 +93,15 @@ public class Test1 {
         boolean booleanValue = false;
         String booleanToString = Boolean.toString(booleanValue);
         System.out.println("Boolean to string: " + booleanToString); // "false"
+
+        String bbbbbb = "Software And Hardware!";
+        String res = bbbbbb.substring(9, 12);
+        System.out.println(res); // "And"
+
+        System.out.println("------------------");
+        String str1 = "JavaDoc";
+        String str3 = "DocJava";
+        // compare J and D if the same then compare a and o nad return difference
+        System.out.println(str1.compareTo(str3));
     }
 }
