@@ -995,7 +995,7 @@ public record ImmutableRec(String name, int id) {
 3. no `constructor`, `private`, `public`, `protected`, `static` modifiers
 
 # 20.05.25
-## Epam Strings
+## Epam Strings 1
 ```java
         String email = "user@example.com";
         System.out.println(email.matches("\\w+@\\w+\\.\\w+")); // true
@@ -1003,3 +1003,30 @@ public record ImmutableRec(String name, int id) {
 1. check only one symbol till the `@`
 2. check only one symbol after the `@` and before the `.`.
 3. check only one symbol after the `.`.
+
+## Epam Strings 2
+```java
+    // test 1
+     String str = "    324   32432 32432   ";
+     System.out.println(str.replaceAll("\\s+", "")); // 3243243232432
+
+    // test 2
+       String xss = "<script> alert()</script>";
+       xss = xss.replaceAll("</?script>", "");
+       System.out.println(xss); // " alert()"
+
+    // test 3
+        String str1 = "7876m.m.877bvbv_-878789-Fghhf<>76";
+        String[] strArr = str1.split("\\D+");
+       System.out.println(Arrays.toString(strArr)); // [7876, 877, 878789, 76]
+
+    // test 4
+            String str2 = String.format("java %.2s he%nl0 %.2f", "SE000", 55.987654321);
+            System.out.println(str2); // java SE he0 55.99
+    // test 5
+        String str3 = String.join(";", List.of("a", "java", "12", "2019"));
+        System.out.println(str3); // a;java;12;2019
+
+    // test 6
+    String formatString = "We are printing double variable (%f), string (\"%s\") and integer variable (%d).";
+System.out.println(String.format(formatString, 0.7, "Java", 10));
