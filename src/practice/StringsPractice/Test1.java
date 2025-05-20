@@ -103,8 +103,6 @@ public class Test1 {
         // compare J and D if the same then compare a and o nad return difference
         System.out.println(str1.compareTo(str3));
 
-
-
         System.out.println("------------------");
         // 1. capacity()
         StringBuilder sb1 = new StringBuilder();
@@ -163,5 +161,13 @@ public class Test1 {
         StringBuilder sb7 = new StringBuilder("reverse");
         sb7.reverse();
         System.out.println("After reverse(): " + sb7);
+
+        StringBuilder sb = new StringBuilder(10);
+        sb.append("Hello...");
+        char c = '!';
+        sb.append(c);
+        sb.insert(8, " Java");
+        sb.delete(5, 8);
+        System.out.println(sb);
     }
 }
