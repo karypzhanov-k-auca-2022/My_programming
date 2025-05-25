@@ -1061,3 +1061,10 @@ System.out.println(result);
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
+
+# 25.05.25
+## Strings 
+1. `String` - immutable, cannot be changed.
+2. `StringBuilder` - mutable, can be changed.
+3. `StringBuffer` - mutable, synchronized, thread-safe.
+4. 
