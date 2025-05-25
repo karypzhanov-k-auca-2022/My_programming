@@ -1062,9 +1062,24 @@ System.out.println(result);
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 
-# 25.05.25
-## Strings 
-1. `String` - immutable, cannot be changed.
-2. `StringBuilder` - mutable, can be changed.
-3. `StringBuffer` - mutable, synchronized, thread-safe.
-4. 
+# 26.05.25
+## Epam account corrector
+```java
+    public static boolean validateEpamEmail(String email) {
+        if (email == null) {
+            return false;
+        }
+
+        String regex = "^[a-zA-Z]+_[a-zA-Z]+(\\d*)?@epam\\.com$";
+        return email.matches(regex);
+    }
+    // valid email
+    // jjj_ds12@epam.com
+```
+### Explanation of the Regular Expression:
+1. `^` - начало строки.
+2. `[a-zA-Z]+` - одна или более букв латинского алфавита (больших или маленьких).
+3. `_` - символ подчеркивания.
+4. `[a-zA-Z]+` - одна или более букв латинского алфавита (больших или маленьких).
+5. `(\\d*)?` - ноль или более цифр (необязательная группа).
+6. `@epam\\.com` - символ `@`, затем `epam.com`.
