@@ -1131,3 +1131,57 @@ try {
         System.out.println( e.getMessage() );
     }
 ```
+
+## Example 3 catch
+```java
+// catch the exception from doStuff() method
+ static String s = "";
+
+    public static void main(String[] args) {
+        try {
+            s += "1";
+            throw new Exception("Искусственно брошенный Exception");
+        } catch (Exception e) {
+            s += "2";
+            System.out.println("Caught in catch: " + e.getClass().getSimpleName() + " — " + e.getMessage());
+        } finally {
+            s += "3";
+            try {
+                doStuff();
+            } catch (ArithmeticException ae) {
+                System.out.println("Caught in finally: " + ae.getClass().getSimpleName() + " — " + ae.getMessage());
+            }
+            s += "4";
+        }
+
+        System.out.println("Result string s = " + s);
+    }
+
+    static void doStuff() {
+        int x = 0;
+        int y = 7 / x;  // тут бросится ArithmeticException
+    }
+```
+
+## Example 4 don't catch
+```java
+    static  String s = "";
+    public static void main(String[] args) {
+        try  {
+            s += "1";
+            throw new Exception();
+        }  catch (Exception e) {
+            s += "2";
+        }  finally {
+            s += "3";
+            doStuff();
+            s += "4";
+        }
+        System.out.println(s);
+    }
+    
+    static void doStuff() {
+        int x = 0;
+        int y = 7 / x;
+    }
+```
