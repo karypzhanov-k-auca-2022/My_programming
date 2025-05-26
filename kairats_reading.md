@@ -1105,3 +1105,29 @@ try {
 } catch (ExceptionType3 e) {
 }
 ```
+
+## Example 1
+```java
+    // ArithmeticException is subclass of Exception and should be caught first
+    // Exception is superclass of ArithmeticException and should be caught last
+        try {
+            int b = 0;
+            int a = 42 / b;
+        } catch (ArithmeticException e) {
+            System.out.println("Unattainable");
+        } catch (Exception e) {
+            System.out.println("Exception");
+        }
+```
+
+## Example 2
+```java 
+
+    try {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
+        System.out.println(a / b);
+    } catch (ArithmeticException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
+        System.out.println( e.getMessage() );
+    }
+```
