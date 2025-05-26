@@ -1185,3 +1185,8 @@ try {
         int y = 7 / x;
     }
 ```
+
+
+## Custom Exceptions
+1. `Checked` extends `Exception` - must be caught or declared in the method signature.
+2. `Unchecked` extends `RuntimeException` - can be caught but not required to be declared in the method signature.
