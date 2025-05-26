@@ -1086,3 +1086,22 @@ System.out.println(result);
 
 # Exceptions
 ![alt text](image-5.png)
+
+1.`single catch` - for handling a single type of exception.
+``` java
+try {
+    // code that may throw an exception
+} catch (ExceptionType e) {
+    // exception handling
+}
+```
+
+2. `multiple catch` - for handling multiple types of exceptions.
+``` java
+try {
+    // code that may throw an exception
+} catch (ExceptionType1 e) {
+} catch (ExceptionType2 e) {
+} catch (ExceptionType3 e) {
+}
+```
