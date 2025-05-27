@@ -1199,3 +1199,20 @@ try {
 4. `V` - Value (for a value)
 5. `N` - Number (for numerical data)
 6. `S`, `U`, `V`, etc. - for the 2nd, 3rd, and 4th types of parameters
+
+## Joker
+1. `?` - Joker (wildcard) - can be used when we don't know the type.
+
+```java
+class  Div  ‹T extends Number› {
+    public boolean equalsDiv(Div‹?› data) {
+        return (this.perform() == data.perform());
+    }}
+class  Demo1 {
+    public static void main(String[] args) {
+        Div‹Integer› d_1 = new Div‹›(10, 20);
+        Div‹Double› d_2 = new Div‹›(5.5, 1.1);
+        boolean res = d_1.equalsDiv(d_2);
+    }
+}
+```
