@@ -1190,3 +1190,12 @@ try {
 ## Custom Exceptions
 1. `Checked` extends `Exception` - must be caught or declared in the method signature.
 2. `Unchecked` extends `RuntimeException` - can be caught but not required to be declared in the method signature.
+
+# 27.05.25
+## Epam Generics
+1. `E` - Element (for elements of collections)
+2. `T` - Type (for any type)
+3. `K` - Key (for a key)
+4. `V` - Value (for a value)
+5. `N` - Number (for numerical data)
+6. `S`, `U`, `V`, etc. - for the 2nd, 3rd, and 4th types of parameters
