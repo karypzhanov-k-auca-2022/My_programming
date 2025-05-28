@@ -1200,7 +1200,7 @@ try {
 5. `N` - Number (for numerical data)
 6. `S`, `U`, `V`, etc. - for the 2nd, 3rd, and 4th types of parameters
 
-## Joker
+## Joker or Wildcard 
 1. `?` - Joker (wildcard) - can be used when we don't know the type.
 
 ```java
@@ -1216,3 +1216,6 @@ class  Demo1 {
     }
 }
 ```
+
+# 28.05.25
+## Epam Enums
