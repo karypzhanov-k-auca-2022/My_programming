@@ -1218,4 +1218,28 @@ class  Demo1 {
 ```
 
 # 28.05.25
-## Epam Enums
+## Wrapper classes
+1. `Integer` - for `int`
+2. `Double` - for `double`
+3. `Character` - for `char`
+4. `Boolean` - for `boolean`
+5. `Long` - for `long`
+6. `Float` - for `float`
+
+## BigDecimal and BigInteger
+1. `BigDecimal` - for precise decimal arithmetic (e.g., financial calculations).
+```java
+BigDecimal balance = new BigDecimal("125.3");
+BigDecimal tax = new BigDecimal("0.2");
+BigDecimal total = balance.add(tax);
+System.out.println(total); // 125.5
+```
+2. `BigInteger` - for arbitrary-precision integers (e.g., very large numbers).
+```java
+BigInteger bigInt = new BigInteger("123456789012345678901234567890");
+BigInteger bigInt2 = new BigInteger("987654321098765432109876543210");
+BigInteger sum = bigInt.add(bigInt2);
+System.out.println(sum); // 1111111110111111111011111111100
+```
+
+
