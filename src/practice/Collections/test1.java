@@ -40,9 +40,17 @@ public class test1 {
         deque.offerFirst(3);
         deque.offerLast(4);
 
-
         while (!deque.isEmpty()) {
             System.out.println(deque.pollLast());
         }
+
+        System.out.println("------------------");
+        Queue<String> queue1 = new PriorityQueue<>();
+        queue1.add("scala");
+        queue1.add("java");
+        queue1.add("kotlin");
+        System.out.println(queue1);
+        System.out.print(queue1.poll() + "-" + queue1.peek());
+        System.out.println();
     }
 }
