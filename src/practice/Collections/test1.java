@@ -1,6 +1,7 @@
 package practice.Collections;
 
 import java.util.Queue;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
@@ -16,7 +17,7 @@ public class test1 {
         }
 
         System.out.println("------------------");
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        Queue<Integer> priorityQueue = new PriorityQueue<>(Comparator.reverseOrder());
         priorityQueue.offer(-9999);
         priorityQueue.offer(9999);
         priorityQueue.offer(2);
