@@ -1242,4 +1242,13 @@ BigInteger sum = bigInt.add(bigInt2);
 System.out.println(sum); // 1111111110111111111011111111100
 ```
 
+# 30.05.25
+`ArrayList` = std::vector
+`LinkedList` = std::list
+`HashSet` = std::unordered_set
+`TreeSet` = std::set
+`HashMap` = std::unordered_map
+`TreeMap` = std::map
+`ArrayDeque` = std::deque
+`PriorityQueue` = std::priority_queue
 
