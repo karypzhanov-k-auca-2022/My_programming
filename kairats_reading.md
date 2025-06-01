@@ -1271,3 +1271,32 @@ System.out.println("--------------------------------");
 SortedSet<Integer> subTree3 = tree.subSet(60, 120); // numbers >= 60 && < 120
 System.out.println("SubTree: " + subTree3);
 ```
+
+## sql commands
+1. `CREATE TABLE` - create a new table.
+```sql
+CREATE TABLE users (
+    id BIGIINT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    email VARCHAR(128) NOT NULL UNIQUE
+)
+```
+2. `INSERT INTO` - insert new data into a table.
+```sql
+INSERT INTO users (first_name, last_name, email)
+VALUES ('John', 'Doe', 'john.doe@example.com');
+``` 
+3. `SELECT` - retrieve data from a table.
+```sql
+SELECT * FROM users WHERE email = 'john.doe@example.com';
+```
+4. `UPDATE` - update existing data in a table.
+```sql
+UPDATE users SET 
+first_name = 'Jane' WHERE id = 1;
+```
+5. `DELETE` - remove data from a table.
+```sql
+DELETE FROM users WHERE id = 1;
+```
