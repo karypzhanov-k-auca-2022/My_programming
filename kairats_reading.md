@@ -1252,3 +1252,22 @@ System.out.println(sum); // 1111111110111111111011111111100
 `ArrayDeque` = std::deque
 `PriorityQueue` = std::priority_queue
 
+# 1.06.25
+## Epam Sets 
+```java
+
+SortedSet<Integer> tree = new TreeSet<>();
+int[] array = {100, 50, 70, 150, 200, 120, 30, 10, 60, 80, 110, 180};
+for (int element : array) {
+    tree.add(element);
+}
+
+SortedSet<Integer> subTree1 = tree.tailSet(100); // numbers >= 100
+System.out.println("Tail: " + subTree1);
+System.out.println("--------------------------------");
+SortedSet<Integer> subTree2 = tree.headSet(100); // numbers < 100
+System.out.println("Head: " + subTree2);
+System.out.println("--------------------------------");
+SortedSet<Integer> subTree3 = tree.subSet(60, 120); // numbers >= 60 && < 120
+System.out.println("SubTree: " + subTree3);
+```
