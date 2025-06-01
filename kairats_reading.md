@@ -1300,3 +1300,12 @@ first_name = 'Jane' WHERE id = 1;
 ```sql
 DELETE FROM users WHERE id = 1;
 ```
+
+6. `JOIN` - combine rows from two or more tables based on a related column.
+```sql
+SELECT * FROM spendings
+JOIN users ON users.id = spendings.user_id
+// or
+SELECT spendings.*, users.first_name FROM spendings
+JOIN users ON users.id = spendings.user_id
+```
