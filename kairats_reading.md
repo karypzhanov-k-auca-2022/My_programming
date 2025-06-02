@@ -1309,3 +1309,5 @@ JOIN users ON users.id = spendings.user_id
 SELECT spendings.*, users.first_name FROM spendings
 JOIN users ON users.id = spendings.user_id
 ```
+
+7. `GROUP BY` - group rows that have the same values in specified columns into summary rows.
