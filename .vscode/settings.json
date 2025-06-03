@@ -71,7 +71,8 @@
         "plaintext": true,
         "markdown": true,
         "scminput": false,
-        "java": true
+        "java": false,
+        "c": true
     },
     "java.debug.settings.onBuildFailureProceed": true
 }
