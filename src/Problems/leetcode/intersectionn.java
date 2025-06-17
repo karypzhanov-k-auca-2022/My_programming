@@ -1,5 +1,6 @@
 package Problems.leetcode;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,6 +26,15 @@ public class intersectionn {
         }
         
         return result;
+    }
+
+    // intersectionn method 2
+    public int[] intersection2(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums1) {
+            set.add(num);
+        }
+        return Arrays.stream(nums2).filter(set::contains).distinct().toArray();
     }
 
     public static void main(String[] args) {
