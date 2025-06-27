@@ -1,4 +1,4 @@
-package practice;
+package practice.trash;
 
 public class Outer {
     void method() {

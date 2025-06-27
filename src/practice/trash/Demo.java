@@ -1,4 +1,4 @@
-package practice;
+package practice.trash;
 
 import Human.Bicycle;
 import Inheritance.Vehicle;

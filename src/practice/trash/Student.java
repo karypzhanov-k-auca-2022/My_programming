@@ -1,4 +1,4 @@
-package practice;
+package practice.trash;
 
 public class Student {
     private int id;

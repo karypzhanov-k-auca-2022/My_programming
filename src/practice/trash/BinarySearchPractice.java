@@ -1,3 +1,4 @@
+package practice.trash;
 public class BinarySearchPractice {
 
     // Задача 1: Найти первое вхождение элемента

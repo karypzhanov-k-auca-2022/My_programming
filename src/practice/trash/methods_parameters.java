@@ -1,4 +1,4 @@
-package practice;
+package practice.trash;
 
 public class methods_parameters {
     static void doJob(String... ss) {

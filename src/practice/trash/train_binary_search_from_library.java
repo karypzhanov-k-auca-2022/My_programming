@@ -1,4 +1,4 @@
-package practice;
+package practice.trash;
 
 import java.util.Arrays;
 import java.util.Scanner;
