@@ -1311,3 +1311,17 @@ JOIN users ON users.id = spendings.user_id
 ```
 
 7. `GROUP BY` - group rows that have the same values in specified columns into summary rows.
+
+# 05.07.25
+## Parallel Programming Essentials
+1. **Concurrency** - multiple tasks making progress at the same time.
+2. **Parallelism** - multiple tasks running simultaneously on different processors or cores.
+3. **Thread** - a lightweight process that can run concurrently with other threads.
+4. **Multithreading** - the ability of a CPU to provide multiple threads of execution
+5. **Synchronization** - the coordination of multiple threads to ensure that they do not interfere with each other when accessing shared resources.
+
+### Process vs Thread
+1. **Process** - an independent program that runs in its own memory space.
+   1. Like a separate kitchen
+2. **Thread** - a lightweight process that shares the same memory space with other threads in the same process.
+   1. Like chefs in the same kitchen
