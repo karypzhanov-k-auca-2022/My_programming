@@ -1341,3 +1341,36 @@ JOIN users ON users.id = spendings.user_id
 6. **Terminated**
 7. **Daemon threads** - run in the background and do not prevent the JVM from exiting when the program finishes.
    1. Example: garbage collector thread
+
+## 2 ways of creating a thread in Java
+1. **Extending the Thread class**
+```java
+    class MyThread extends Thread {
+        @Override
+        public void run() {
+            System.out.println("Thread is running");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            MyThread thread = new MyThread();
+            thread.start(); // starts the thread
+        }
+    }
+```
+2. **Implementing the Runnable interface**
+```java
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyRunnable());
+        thread.start(); // starts the thread
+    }
+}
