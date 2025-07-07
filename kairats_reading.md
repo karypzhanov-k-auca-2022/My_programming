@@ -1428,3 +1428,7 @@ public class SynchronizedBlockExample {
 }
 ```
 
+# 07.07.25
+## DEADLOCK
+1. **Deadlock** - a situation where two or more threads are blocked forever, waiting
+![alt text](image-7.png)
