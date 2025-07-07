@@ -1432,3 +1432,14 @@ public class SynchronizedBlockExample {
 ## DEADLOCK
 1. **Deadlock** - a situation where two or more threads are blocked forever, waiting
 ![alt text](image-7.png)
+
+1. Solve DEADLOCK by:
+   1. **Avoiding nested locks** - A -> B, B -> A, A -> C
+   2. **Using a timeout** - if a thread cannot acquire a lock within a certain time, it should give up and try again later.
+   3. **Lock ordering** - always acquire locks in the same order to prevent circular dependencies.
+
+### Starvation
+1. **Starvation** - a situation where a thread is perpetually denied access to resources NO PROGRESS
+
+### Livelock
+1. **Livelock** - a situation where a thread is not blocked, but it is unable to make progress because it keeps changing its state in response to other threads' actions.
