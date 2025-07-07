@@ -1333,7 +1333,13 @@ JOIN users ON users.id = spendings.user_id
 
 ### Java Threads
 1. **New** 
+```java
+Thread barron = new Shopper();
+```
 2. **Runnable**
+```java
+barron.start(); // starts the thread
+```
 3. **Blocked**
 4. **Waiting** - waiting indefinitely for another thread to perform a particular action.
    1. Example: `Object.wait()`, `Thread.join()`
@@ -1374,3 +1380,51 @@ public class Main {
         thread.start(); // starts the thread
     }
 }
+```
+
+# 06.07.25 DATA RACE
+## Synchronization Primitives
+1. **Mutex** or **Lock** - only one thread can access a resource at a time.
+2. **Atomic** - operations that are performed as a single, indivisible step.   
+```java
+import java.util.concurrent.atomic.*;
+public class AtomicExample {
+    public static void main(String[] args) {
+        AtomicInteger atomicInt = new AtomicInteger(0);
+        atomicInt.incrementAndGet(); // atomically increments the value by 1
+        System.out.println("Atomic Integer: " + atomicInt.get());
+    }
+}
+```
+
+## Synchronized Methods
+1. **Synchronized Method** - a method that can only be accessed by one thread at a time.
+```java
+public class SynchronizedExample extends Thread {
+    static int count = 0;
+    public static synchronized void synchronizedMethod() { // synchronized method
+        count++;
+    }
+
+    @Override
+    public void run() {
+        for(int i = 1; i <= 10_000_000; i++) {
+            synchronizedMethod();
+        }
+    }
+}
+```
+
+## Synchronized Statement
+1. **Synchronized Statement** - a block of code that can only be accessed by one thread at a time.
+```java
+public class SynchronizedBlockExample {
+    static int count = 0;
+    public static void increment() {
+        synchronized (SynchronizedBlockExample.class) { // synchronized block
+            count++;
+        }
+    }
+}
+```
+
