@@ -1443,3 +1443,11 @@ public class SynchronizedBlockExample {
 
 ### Livelock
 1. **Livelock** - a situation where a thread is not blocked, but it is unable to make progress because it keeps changing its state in response to other threads' actions.
+
+## Threads Lifecycle
+![alt text](image-8.png)
+
+# 10.07.25
+## Key words 'volatile', 'synchronized'
+1. **volatile** - open to all threads, but not synchronized.
+2. **synchronized** - allows only one thread to access a resource at a time.
