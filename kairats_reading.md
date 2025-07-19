@@ -1451,3 +1451,121 @@ public class SynchronizedBlockExample {
 ## Key words 'volatile', 'synchronized'
 1. **volatile** - open to all threads, but not synchronized.
 2. **synchronized** - allows only one thread to access a resource at a time.
+
+# 19.07.2025
+## Advanced Synchronization. Locking
+1. **Reentrant Locks**
+    - Reentrant locks allow a thread to acquire the same lock multiple times without causing a deadlock.
+    - Useful for scenarios where a method can call itself or call another method that requires the same lock.
+
+```java
+    import java.util.concurrent.locks.ReentrantLock;
+
+    public class ReentrantLockExample {
+        private final ReentrantLock lock = new ReentrantLock();
+        private int count = 0;
+        public void increment() {
+            lock.lock();
+            try {
+                count++;
+                System.out.println("Count: " + count);
+            } finally {
+                lock.unlock();
+            }
+        }
+
+        public static void main(String[] args) {
+            ReentrantLockExample example = new ReentrantLockExample();
+            example.increment();
+            example.increment(); // Safe to call multiple times
+        }
+    }
+```
+
+2. **TryLock**
+   - `tryLock()` is a non-blocking way to acquire a lock.
+   - It returns immediately with a boolean indicating success or failure.
+   - Useful for avoiding deadlocks and for implementing timeouts.
+
+```java
+    import java.util.concurrent.locks.ReentrantLock;
+
+    public class TryLockExample {
+        private final ReentrantLock lock = new ReentrantLock();
+        private String resource;
+
+        public void produce(String value) {
+            lock.lock();
+            try {
+                resource = value;
+                System.out.println("Produced: " + resource);
+            } finally {
+                lock.unlock();
+            }
+        }
+
+        public void consume() {
+            if (lock.tryLock()) {
+                try {
+                    System.out.println("Consumed: " + resource);
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                System.out.println("Resource not available for consumption.");
+            }
+        }
+
+        public static void main(String[] args) {
+            TryLockExample example = new TryLockExample();
+            example.produce("Data");
+            example.consume(); // Will consume the produced data
+        }
+    }
+```
+3. Read-write locks
+   - Read-write locks allow multiple threads to read shared data concurrently while ensuring exclusive access for writing.
+   - This improves performance in scenarios where reads are more frequent than writes.
+
+```java
+    import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+    public class ReadWriteLockExample {
+        private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+        private String data = "Initial Data";
+
+        public void read() {
+            rwLock.readLock().lock();
+            try {
+                System.out.println("Reading: " + data);
+            } finally {
+                rwLock.readLock().unlock();
+            }
+        }
+
+        public void write(String newData) {
+            rwLock.writeLock().lock();
+            try {
+                data = newData;
+                System.out.println("Writing: " + data);
+            } finally {
+                rwLock.writeLock().unlock();
+            }
+        }
+
+        public static void main(String[] args) {
+            ReadWriteLockExample example = new ReadWriteLockExample();
+
+            // Simulating multiple readers
+            for (int i = 0; i < 10; i++) {
+                new Thread(example::read).start();
+            }
+
+            // Simulating writers
+            for (int i = 0; i < 2; i++) {
+                final int index = i;
+                new Thread(() -> example.write("Data " + index)).start();
+            }
+        }
+    }
+```
