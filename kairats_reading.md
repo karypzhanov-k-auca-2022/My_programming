@@ -1531,25 +1531,27 @@ public class SynchronizedBlockExample {
     import java.util.concurrent.locks.ReentrantReadWriteLock;
 
     public class ReadWriteLockExample {
-        private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+        private static ReentrantReadWriteLock marker = new ReentrantReadWriteLock();
+        private Lock readLock = marker.readLock();
+        private Lock writeLock = marker.writeLock();
         private String data = "Initial Data";
 
         public void read() {
-            rwLock.readLock().lock();
+            readLock.lock();
             try {
                 System.out.println("Reading: " + data);
             } finally {
-                rwLock.readLock().unlock();
+                readLock.unlock();
             }
         }
 
         public void write(String newData) {
-            rwLock.writeLock().lock();
+            writeLock.lock();
             try {
                 data = newData;
                 System.out.println("Writing: " + data);
             } finally {
-                rwLock.writeLock().unlock();
+                writeLock.unlock();
             }
         }
 
