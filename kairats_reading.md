@@ -1523,7 +1523,7 @@ public class SynchronizedBlockExample {
         }
     }
 ```
-3. Read-write locks
+3. **Read-write** locks
    - Read-write locks allow multiple threads to read shared data concurrently while ensuring exclusive access for writing.
    - This improves performance in scenarios where reads are more frequent than writes.
 
@@ -1570,4 +1570,52 @@ public class SynchronizedBlockExample {
             }
         }
     }
+```
+
+## Semaphore
+1. **Semaphore** - a synchronization primitive that allows a limited number of threads to access a shared resource concurrently.
+   - Useful for controlling access to a pool of resources, such as database connections or thread pools.
+   - Different requirements in 1st attribute.
+
+### Mutex vs Semaphore
+- **Mutex** (Mutual Exclusion) allows only one thread to access a resource at a time.
+- **Semaphore** allows multiple threads to access a resource, up to a specified limit
+- **Mutex** is a binary semaphore (only two states: locked and unlocked).
+
+// Example of Semaphore
+```java
+    public class PhoneChargeStation extends Thread {
+        private static Semaphore semaphore = new Semaphore(2); // Allow 2 threads to access
+        private String name;
+
+        public PhoneChargeStation(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            try {
+                semaphore.acquire(); // acquire a permit
+                System.out.println(name + " is charging...");
+                Thread.sleep(2000); // Simulate charging time
+                System.out.println(name + " has finished charging.");
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                semaphore.release();  // release the permit
+            }
+        }
+
+        public static void main(String[] args) {
+            for (int i = 1; i <= 10; i++) {
+                new PhoneChargeStation("Phone " + i).start();
+            }
+        }
+    }
+    // Output:
+    // Phone 1 is charging...
+    // Phone 2 is charging...
+    // Phone 1 has finished charging.
+    // Phone 2 has finished charging.
+    // Phone 3 is charging...
 ```
