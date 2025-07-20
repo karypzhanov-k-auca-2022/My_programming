@@ -1619,3 +1619,15 @@ public class SynchronizedBlockExample {
     // Phone 2 has finished charging.
     // Phone 3 is charging...
 ```
+
+# 20.07.2025
+## Conditional Variables
+1. **Condition Variables** - used to synchronize threads based on certain conditions.
+   - Allow threads to wait until a specific condition is met.
+   - Useful for implementing producer-consumer scenarios.
+
+## Barrier
+1. **Barrier** - a synchronization mechanism that allows a set of threads to wait until all threads have reached a certain point.
+   - Useful for coordinating phases of computation in parallel algorithms.
+   - Can be implemented using `CyclicBarrier` in Java.
+
