@@ -1648,3 +1648,8 @@ singleThreadPool.submit(() -> {
 });
 ```
 
+## 4 stages of methodology
+1. **Partitioning** - divide the problem into smaller tasks.
+2. **Communication** - enable communication between tasks as needed.
+3. **Agglomeration** - combine results from multiple tasks.
+4. **Mapping** - map tasks to threads or processors for execution.
