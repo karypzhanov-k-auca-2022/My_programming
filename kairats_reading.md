@@ -1633,10 +1633,18 @@ public class SynchronizedBlockExample {
 
 # 28.07.2025
 ## ExecutorService
-1. Use ExecutorService to manage threads instead of creating them manually.
+1. `newFixedThreadPool()` - fixed number of threads in the pool.
 ```java
 ExecutorService pool = Executors.newFixedThreadPool(4); // Create a thread pool with 4 threads
 pool.submit(() -> {
     // Task implementation
 });
+```
+2. `newSingleThreadExecutor()` - a single thread to execute tasks sequentially.
+```java
+ExecutorService singleThreadPool = Executors.newSingleThreadExecutor(); // Create a single-threaded executor
+singleThreadPool.submit(() -> {
+    // Task implementation
+});
+```
 
