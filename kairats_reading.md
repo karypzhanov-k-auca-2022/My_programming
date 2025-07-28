@@ -1631,3 +1631,12 @@ public class SynchronizedBlockExample {
    - Useful for coordinating phases of computation in parallel algorithms.
    - Can be implemented using `CyclicBarrier` in Java.
 
+# 28.07.2025
+## ExecutorService
+1. Use ExecutorService to manage threads instead of creating them manually.
+```java
+ExecutorService pool = Executors.newFixedThreadPool(4); // Create a thread pool with 4 threads
+pool.submit(() -> {
+    // Task implementation
+});
+
